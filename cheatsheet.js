@@ -94,10 +94,36 @@ const myFirstArrowFunction = (paramOne, paramTwo) => {
     // DO SOMETHING WITH paramOne & paramTwo
 }
 
-// X. Array functions
+// 7. Array functions
 
-// X.1 Array.forEach
+// 7.1 Array.forEach
 const citiesArray = ['Berlin', 'Barcelona', 'Montreal']
 citiesArray.forEach(function(currentElement, index, citiesArray) {
     console.log(index, currentElement)
+})
+
+// 7.2 Array.map (returns a new array based on your input array)
+let nums = [1, 2, 3]
+const multipliedNums = nums.map(function(el, index, arr) {
+    return el * 2
+})
+
+// 7.3 Array.find (returns one element)
+nums = [1, 3, 4, 5, 8]
+const firstEvenNumber = nums.find(function(el, index, array) {
+    return el % 2 === 0
+})
+
+// 7.4 Array.filter (returns an array with a subset of the input array)
+nums = [1, 2, 3, 4, 5, 6]
+const evenNumbers = nums.filter(function(el, index, array) {
+    return el % 2 === 0
+})
+
+// 7.5. Array.sort
+nums = [1, 9, 8, 3, 5, 6, 4, 2, 7]
+nums.sort(function(a, b) {
+    if (a < b) return -1
+    else if (a > b) return 1
+    else return 0
 })

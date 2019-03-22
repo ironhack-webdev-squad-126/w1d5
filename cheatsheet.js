@@ -127,3 +127,7 @@ nums.sort(function(a, b) {
     else if (a > b) return 1
     else return 0
 })
+// 7.6 Array.reduce
+const sum = [1, 2, 3, 4].reduce((acc, val) => {
+    return acc + val
+}, 0)

@@ -97,3 +97,31 @@ nums.sort((a, b) => {
 
 console.log('nums :', nums)
 // [1,3,5,7,9,2,4,6,8,10]
+
+// nums = [1, 2, 3, 4, 5, 6, 99]
+
+const sum = nums.reduce((acc, val) => {
+    return acc + val
+}, 0)
+
+// const lengthSums = cityStrings.reduce((acc, value) => {
+//     return acc + value.length
+// }, cityStrings.length)
+
+/* eslint-disable */
+const cityStrings = ['Barcelona', 'Berlin', 'Madrid']
+Array.prototype.customReduce = function(cb, startValue) {
+    const array = this
+    let accumulatedValue = startValue
+    for (let i = 0; i < this.length; i++) {
+        accumulatedValue = cb(accumulatedValue, array[i], i, array)
+    }
+
+    return accumulatedValue
+}
+
+console.log(
+    cityStrings.customReduce(function(acc, value, index, array) {
+        return acc + value.length
+    }, 0)
+)
